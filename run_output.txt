@@ -1,0 +1,38 @@
+Python 3.12.3, default recursion limit = 1000
+
+== Part 1: correctness check, n = 0..20 ==
+A and B agree with the reference for n=0..20: True 
+
+== Part 2: experiments ==
+A  n=5    calls=15           time=0.000003s
+A  n=10   calls=177          time=0.000012s
+A  n=15   calls=1973         time=0.000160s
+A  n=20   calls=21891        time=0.001388s
+A  n=25   calls=242785       time=0.016340s
+A  n=30   calls=2692537      time=0.182123s
+A  n=35   calls=29860703     time=2.220642s
+B  n=10   calls=19           time=0.000008s
+B  n=50   calls=99           time=0.000034s
+B  n=100  calls=199          time=0.000023s
+B  n=200  calls=399          time=0.000176s
+B  n=500  calls=999          time=0.000727s
+B  n=1000 calls=1999         time=0.000988s
+Largest n reached by Algorithm A: 35
+
+== Part 3: formula checks ==
+calls_A(n) == 2F(n+1)-1 : True
+calls_B(n) == 2n-1      : True
+Estimated calls for A at n=1000: 1.406e+209
+Measured rate (n=35): 1.345e+07 calls/s
+Estimated time: 3.314e+194 years
+
+== Part 4 ==
+4.1 default limit, n=1000: RecursionError: maximum recursion depth exceeded
+Fix 1 (setrecursionlimit): calls=1999, time=0.002214s, F(1000) correct: True
+Fix 2 (bottom-up, table): table entries=1001, time=0.000166s, correct: True
+Fix 2b (two variables): correct: True
+Fix 3 (warm-up, default limit): correct: True
+4.3 truthiness check, n=30: value=832040, calls=59 (correct 'exists' version: 59 calls)
+    2n-1 = 59
+
+Saved results.csv, results.json and the figures.
