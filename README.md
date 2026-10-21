@@ -1,6 +1,4 @@
 
-This is our group's work for **Assignment 5.1*
-
 ## What this project is about
 
 The Fibonacci sequence goes 0, 1, 1, 2, 3, 5, 8, 13, and so on. Every number is the sum of the two before it. It's an easy rule, but there are two very different ways to turn it into code, and one of them is far slower than the other.
